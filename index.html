@@ -8,13 +8,20 @@
 </head>
 <body>
     <div id="text">
-        Simulating payment gateway webpage
+        Simulating payment gateway webpage. 
+        <br/>
+        Order Number: <span id="order"></span>
         <br/>
         Payment successfully, redirecting back to app in <span id="counting">10</span>s ...
     </div>
     <script>
         const MAX_COUNTING = 10;
         let count = MAX_COUNTING;
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const orderId = urlParams.get('order_id');
+        document.querySelector('#order').innerHTML = orderId;
+
         setInterval(() => {
             count--;
             if(count < 0) count = 0;
@@ -22,7 +29,7 @@
             document.querySelector('#counting').innerHTML = count;
 
             if(count === 0) {
-                window.location.href = "eatizenmkp://";
+                window.location.href = `eatizenmkp://order/status/${orderId}`;
             }
         }, 1000);
     </script>
