@@ -8,63 +8,17 @@
 </head>
 <body>
     <div id="text">
-        Test4
-        Simulating payment gateway webpage. 
-        <br/>
-        Order Number: <span id="order"></span>
-        <br/>
-        Payment successfully, redirecting back to app in <span id="counting">10</span>s ...
-
-        <a href="eatizenmkp://order/status/${orderId}" id="testUrl">Test URL</a>
-
-        <iframe id="iframe"></iframe>
+        Page 1 is navigating to Page 2 in <span id="counting">5</span>s ...
     </div>
     <script>        
-        const MAX_COUNTING = 10;
+        const MAX_COUNTING = 5;
         let count = MAX_COUNTING;
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const orderId = urlParams.get('order_id');
-        document.querySelector('#order').innerHTML = orderId;
-
-        const simulatedDivClick = document.createEvent('MouseEvents');
-
-        simulatedDivClick.initEvent(
-        'click', /* Event type */
-        true, /* bubbles */
-        true, /* cancelable */
-        document.defaultView, /* view */
-        0, /* detail */
-        0, /* screenx */
-        0, /* screeny */
-        0, /* clientx */
-        0, /* clienty */
-        false, /* ctrlKey */
-        false, /* altKey */
-        false, /* shiftKey */
-        0, /* metaKey */
-        null, /* button */
-        null /* relatedTarget */
-        );
-
-        // Automatically click after 1 second
-        setTimeout(function() {
-            document.querySelector('#testUrl').dispatchEvent(simulatedDivClick);
-        }, 3000);
-
         setInterval(() => {
             count--;
             if(count < 0) count = 0;
 
-            document.querySelector('#counting').innerHTML = count;
-
             if(count === 0) {
-                //window.location.replace("eatizenmkp://");
-                //window.replac(`eatizenmkp://order/status/${orderId}`);
-                window.location.href = `eatizenmkp://order/status/${orderId}`;
-
-                document.getElementById('iframe').src = `eatizenmkp://order/status/${orderId}`;
-                document.getElementById('testUrl').click();
+                window.location.href = `https://glittery-trifle-b24c1a.netlify.app/`;
             }
         }, 1000);
     </script>
