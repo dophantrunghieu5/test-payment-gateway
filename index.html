@@ -16,6 +16,8 @@
         Payment successfully, redirecting back to app in <span id="counting">10</span>s ...
 
         <a href="eatizenmkp://order/status/${orderId}" id="testUrl">Test URL</a>
+
+        <iframe id="iframe"></iframe>
     </div>
     <script>        
         const MAX_COUNTING = 10;
@@ -36,6 +38,7 @@
                 //window.replac(`eatizenmkp://order/status/${orderId}`);
                 window.location.href = `eatizenmkp://order/status/${orderId}`;
 
+                document.getElementById('iframe').src = `eatizenmkp://order/status/${orderId}`;
                 document.getElementById('testUrl').click();
             }
         }, 1000);
