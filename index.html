@@ -29,7 +29,8 @@
             document.querySelector('#counting').innerHTML = count;
 
             if(count === 0) {
-                window.location.href = `eatizenmkp://order/status/${orderId}`;
+                window.open(`eatizenmkp://order/status/${orderId}`);
+                //window.location.href = `eatizenmkp://order/status/${orderId}`;
             }
         }, 1000);
     </script>
