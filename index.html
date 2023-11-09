@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="text">
+        Test1
         Simulating payment gateway webpage. 
         <br/>
         Order Number: <span id="order"></span>
@@ -29,7 +30,8 @@
             document.querySelector('#counting').innerHTML = count;
 
             if(count === 0) {
-                window.open(`eatizenmkp://order/status/${orderId}`);
+                window.location.replace("eatizenmkp://");
+                //window.replac(`eatizenmkp://order/status/${orderId}`);
                 //window.location.href = `eatizenmkp://order/status/${orderId}`;
             }
         }, 1000);
