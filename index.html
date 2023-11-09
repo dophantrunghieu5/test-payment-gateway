@@ -27,9 +27,7 @@
 
         setInterval(() => {
             count--;
-            if(count < 0) count = 0;
-
-            document.querySelector('#counting').innerHTML = count;
+            document.querySelector('#counting').innerHTML = Math.max(count, 0);
 
             if(count === 0) {
                 //window.location.replace("eatizenmkp://");
