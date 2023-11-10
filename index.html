@@ -25,17 +25,20 @@
         const orderId = urlParams.get('order_id');
         document.querySelector('#order').innerHTML = orderId;
 
-        setInterval(() => {
-            count--;
-            document.querySelector('#counting').innerHTML = Math.max(count, 0);
+        window.location.href = `eatizenmkp://order/status/${orderId}`;
+        document.getElementById('testUrl').click();
+        
+        // setInterval(() => {
+        //     count--;
+        //     document.querySelector('#counting').innerHTML = Math.max(count, 0);
 
-            if(count === 0) {
-                //window.location.replace("eatizenmkp://");
-                //window.replac(`eatizenmkp://order/status/${orderId}`);
-                window.location.href = `eatizenmkp://order/status/${orderId}`;
-                document.getElementById('testUrl').click();
-            }
-        }, 1000);
+        //     if(count === 0) {
+        //         //window.location.replace("eatizenmkp://");
+        //         //window.replac(`eatizenmkp://order/status/${orderId}`);
+        //         window.location.href = `eatizenmkp://order/status/${orderId}`;
+        //         document.getElementById('testUrl').click();
+        //     }
+        // }, 1000);
     </script>
 </body>
 </html>
