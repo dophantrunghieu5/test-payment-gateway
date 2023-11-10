@@ -15,7 +15,7 @@
         <br/>
         Payment successfully, redirecting back to app in <span id="counting">10</span>s ...
 
-        <a href="eatizenmkp://order/status/0000000097" id="testUrl">Test URL</a>
+        <a href="https://integration-5ojmyuq-bn7eqktw2m3ye.ap-3.magentosite.cloud/order/status/0000000097" id="testUrl">Test URL</a>
     </div>
     <script>        
         const MAX_COUNTING = 10;
@@ -25,7 +25,7 @@
         const orderId = urlParams.get('order_id');
         document.querySelector('#order').innerHTML = orderId;
 
-        window.location.href = `eatizenmkp://order/status/0000000097`;
+        window.location.href = `https://integration-5ojmyuq-bn7eqktw2m3ye.ap-3.magentosite.cloud/order/status/0000000097`;
         document.getElementById('testUrl').click();
         
         // setInterval(() => {
@@ -33,9 +33,9 @@
         //     document.querySelector('#counting').innerHTML = Math.max(count, 0);
 
         //     if(count === 0) {
-        //         //window.location.replace("eatizenmkp://");
-        //         //window.replac(`eatizenmkp://order/status/${orderId}`);
-        //         window.location.href = `eatizenmkp://order/status/${orderId}`;
+        //         //window.location.replace("https://integration-5ojmyuq-bn7eqktw2m3ye.ap-3.magentosite.cloud/");
+        //         //window.replac(`https://integration-5ojmyuq-bn7eqktw2m3ye.ap-3.magentosite.cloud/order/status/${orderId}`);
+        //         window.location.href = `https://integration-5ojmyuq-bn7eqktw2m3ye.ap-3.magentosite.cloud/order/status/${orderId}`;
         //         document.getElementById('testUrl').click();
         //     }
         // }, 1000);
