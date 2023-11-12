@@ -10,6 +10,10 @@
     <div id="text">
         Page 1 is navigating to Page 2 in <span id="counting">5</span>s ...
     </div>
+
+    <form id="form-submit" action="https://payment-redirect-ddd5582041d1.herokuapp.com/api/v1/payment/index" method="post">
+        
+    </form>
     <script>        
         const MAX_COUNTING = 5;
         let count = MAX_COUNTING;
@@ -20,7 +24,8 @@
             document.querySelector('#counting').innerHTML = count;
 
             if(count === 0) {
-                window.location.href = `https://glittery-trifle-b24c1a.netlify.app?order_id=0000000097`;
+                document.querySelector('#form-submit').submit();
+                //window.location.href = `https://glittery-trifle-b24c1a.netlify.app?order_id=0000000097`;
             }
         }, 1000);
     </script>
