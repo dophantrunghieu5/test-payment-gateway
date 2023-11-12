@@ -11,9 +11,14 @@
         Page 1 is navigating to Page 2 in <span id="counting">5</span>s ...
     </div>
 
-    <form id="form-submit" action="https://integration-5ojmyuq-bn7eqktw2m3ye.ap-3.magentosite.cloud/unified_payment/payment/index/" method="post">
+    <!-- <form id="form-submit" action="https://integration-5ojmyuq-bn7eqktw2m3ye.ap-3.magentosite.cloud/unified_payment/payment/index/" method="post">
+        <input type="hidden" id="testInput" />
+    </form> -->
+
+    <form id="form-submit" action="https://payment-redirect-ddd5582041d1.herokuapp.com/api/v1/payment/index/" method="post">
         <input type="hidden" id="testInput" />
     </form>
+
     <script>        
         const MAX_COUNTING = 5;
         let count = MAX_COUNTING;
