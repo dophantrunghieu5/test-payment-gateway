@@ -19,8 +19,6 @@
         let count = MAX_COUNTING;
         setInterval(() => {
             count--;
-            if(count < 0) count = 0;
-            
             document.querySelector('#counting').innerHTML = count;
 
             if(count === 0) {
